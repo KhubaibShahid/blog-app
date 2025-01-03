@@ -3,19 +3,199 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --home: 0px;
+  --about: 73px;
+  --blogs: 145px;
+  --feedback: 228px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.line {
+  width: 50px;
+  height: full;
+  border: 1px solid white;
+  position: absolute;
+  bottom: 10px;
+  left: var(--home);
+}
+
+.post::-webkit-scrollbar{
+  display: none;
+}
+
+/* .post::-webkit-scrollbar-track{
+  background-color: red;
+  width: 100px;
+  height: 20px;
+} */
+
+@keyframes home-about {
+  25% {
+    left: var(--home);
+  }
+  50% {
+    left: -10px;
+  }
+  75% {
+    left: 83px;
+  }
+  100% {
+    left: var(--about);
+  }
+}
+@keyframes blog-about {
+  25% {
+    left: var(--blogs);
+  }
+  50% {
+    left: 155px;
+  }
+  75% {
+    left: 63px;
+  }
+  100% {
+    left: var(--about);
+  }
+}
+@keyframes feedback-about {
+  25% {
+    left: var(--feedback);
+  }
+  50% {
+    left: 238px;
+  }
+  75% {
+    left: 63px;
+  }
+  100% {
+    left: var(--about);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes about-home {
+  25% {
+    left: var(--about);
+  }
+  50% {
+    left: 83px;
+  }
+  75% {
+    left: -10px;
+  }
+  100% {
+    left: var(--home);
+  }
+}
+@keyframes blog-home {
+  25% {
+    left: var(--blogs);
+  }
+  50% {
+    left: 155px;
+  }
+  75% {
+    left: -10px;
+  }
+  100% {
+    left: var(--home);
+  }
+}
+@keyframes feedback-home {
+  25% {
+    left: var(--feedback);
+  }
+  50% {
+    left: 238px;
+  }
+  75% {
+    left: -10px;
+  }
+  100% {
+    left: var(--home);
+  }
+}
+
+@keyframes about-blog {
+  25% {
+    left: var(--about);
+  }
+  50% {
+    left: 63px;
+  }
+  75% {
+    left: 155px;
+  }
+  100% {
+    left: var(--blogs);
+  }
+}
+@keyframes home-blog {
+  25% {
+    left: var(--home);
+  }
+  50% {
+    left: -10px;
+  }
+  75% {
+    left: 155px;
+  }
+  100% {
+    left: var(--blogs);
+  }
+}
+@keyframes feedback-blog {
+  25% {
+    left: var(--feedback);
+  }
+  50% {
+    left: 238px;
+  }
+  75% {
+    left: 135px;
+  }
+  100% {
+    left: var(--blogs);
+  }
+}
+
+@keyframes about-feedback {
+  25% {
+    left: var(--about);
+  }
+  50% {
+    left: 63px;
+  }
+  75% {
+    left: 238px;
+  }
+  100% {
+    left: var(--feedback);
+  }
+}
+@keyframes home-feedback {
+  25% {
+    left: var(--home);
+  }
+  50% {
+    left: -10px;
+  }
+  75% {
+    left: 238px;
+  }
+  100% {
+    left: var(--feedback);
+  }
+}
+@keyframes blog-feedback {
+  25% {
+    left: var(--blogs);
+  }
+  50% {
+    left: 135px;
+  }
+  75% {
+    left: 238px;
+  }
+  100% {
+    left: var(--feedback);
+  }
 }
