@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import IMAGE from "./assests/pexels-quintingellar-2199293.jpg";
 import FooterApp from "./components/footer";
 import { useState, useEffect } from "react";
 import { client } from "../sanity/lib/client";
@@ -14,7 +13,7 @@ export default function App() {
   const [blogsarr, setBlogsArr] = useState([]);
 
   async function getBlog() {
-    let arr: any = [];
+    const arr: any = [];
     const blog = await client.fetch(`*[_type == "post"]`);
 
     console.log(blog);

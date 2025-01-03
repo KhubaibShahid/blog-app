@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import IMAGE from "../assests/pexels-quintingellar-2199293.jpg";
 import FooterApp from "../components/footer";
 import { useState, useEffect } from "react";
 import { client } from "../../sanity/lib/client";
@@ -14,7 +13,7 @@ export default function Blogs() {
   const router = useRouter();
 
   async function getBlog() {
-    let arr: any = [];
+    const arr: any = [];
     const blog = await client.fetch(`*[_type == "post"]`);
 
     console.log(blog);
@@ -47,7 +46,7 @@ export default function Blogs() {
 
             {
               blogsarr && blogsarr.map((v, i) => 
-                <div onClick={() => router.push(`/readblog/${v.slug}`)} className="card max-w-[800px] rounded-lg shadow-lg p-5">
+                <div key={i} onClick={() => router.push(`/readblog/${v.slug}`)} className="card max-w-[800px] rounded-lg shadow-lg p-5">
               <div className="flex justify-between items-center flex-col-reverse min-[600px]:flex-row border-b border-b-black pb-5">
                 <div>
                   <h3 className="title text-2xl font-bold mb-3">

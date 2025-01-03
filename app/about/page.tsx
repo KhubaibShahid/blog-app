@@ -11,9 +11,9 @@ export default function App() {
               Welcome to Okay your goto platform for any topic/niche, e.g.,
               technology insights, creative inspiration, travel tales, etc. Our
               mission is to state the purpose or goal of your blog, e.g.,
-              "empower readers with insightful stories and practical knowledge,"
-              "share the beauty of diverse cultures through travel stories,"
-              etc. Whether you're here to learn, explore, or simply enjoy a good
+              &quot;empower readers with insightful stories and practical knowledge,&quot;
+              &quot;share the beauty of diverse cultures through travel stories,&quot;
+              etc. Whether you&apos;re here to learn, explore, or simply enjoy a good
               read, we got something special for you.
             </p>
           </div>

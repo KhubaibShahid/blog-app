@@ -50,16 +50,16 @@ export default function BlogReader() {
               blogBody.map((block: any, index: number) => {
                 if (block._type === "block") {
                     return (
-                        <div>
+                        <div key={index} className="my-5">
                             {block.style == "h3" ? 
-                            block.children.map((text: any) => {
+                            block.children.map((text: any, j: number) => {
                                 return (
-                                    <h3 className="text-3xl font-bold my-5">{text.text}</h3>
+                                    <h3 key={index + j} className="text-3xl font-bold my-5">{text.text}</h3>
                                 )
                             })
-                             : block.children.map((text : any) => {
+                             : block.children.map((text : any, j: number) => {
                                 return (
-                                    <span className={`${text.marks.includes("strong") ? `font-bold` : ``}`}>{text.text}</span>                                    
+                                    <span key={index + j} className={`${text.marks.includes("strong") ? `font-bold` : ``}`}>{text.text}</span>                                    
                                 )
                             })
                             }

@@ -1,4 +1,4 @@
-import { BsFacebook, BsTwitterX, BsInstagram, BsLinkedin, BsTelephoneFill, BsPinMapFill, BsMailbox } from "react-icons/bs";
+import { BsFacebook, BsTwitterX, BsInstagram, BsLinkedin, BsTelephoneFill, BsPinMapFill } from "react-icons/bs";
 
 import { CiMail } from "react-icons/ci";
 

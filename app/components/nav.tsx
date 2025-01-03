@@ -8,7 +8,7 @@ import { BiMenu, BiX } from "react-icons/bi";
 
 export default function Nav() {
   const isMobile = useMediaQuery("(max-width: 800px)");
-  let anchorRef = useRef<any>(null);
+  const anchorRef = useRef<any>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [anchor, setAnchor] = useState<
