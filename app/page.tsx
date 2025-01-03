@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 export default function App() {
 
   const router = useRouter();
-  const [blogsarr, setBlogsArr] = useState([]);
+  const [blogsarr, setBlogsArr] = useState<any>([]);
 
   async function getBlog() {
     const arr: any = [];
@@ -53,7 +53,7 @@ export default function App() {
       <div className="blogs mb-20 mt-10 flex flex-col-reverse md:flex-row gap-10 justify-center relative px-5">
         <div className="post md:w-[80%] flex flex-col items-center gap-10">
           {blogsarr &&
-            blogsarr.map((v, i) => (
+            blogsarr.map((v: any, i: number) => (
               <div onClick={() => router.push(`/readblog/${v.slug}`)} className="card max-w-[800px] rounded-lg shadow-lg p-5" key={i}>
                 <div className="flex justify-between items-center flex-col-reverse min-[600px]:flex-row border-b border-b-black pb-5">
                   <div>

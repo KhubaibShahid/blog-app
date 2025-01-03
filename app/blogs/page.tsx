@@ -8,7 +8,7 @@ import { urlFor } from "../../sanity/lib/image";
 import { useRouter } from "next/navigation";
 
 export default function Blogs() {
-  const [blogsarr, setBlogsArr] = useState([]);
+  const [blogsarr, setBlogsArr] = useState<any>([]);
 
   const router = useRouter();
 
@@ -45,7 +45,7 @@ export default function Blogs() {
           <div className="post md:w-[80%] flex flex-col items-center gap-10">
 
             {
-              blogsarr && blogsarr.map((v, i) => 
+              blogsarr && blogsarr.map((v : any, i : number) => 
                 <div key={i} onClick={() => router.push(`/readblog/${v.slug}`)} className="card max-w-[800px] rounded-lg shadow-lg p-5">
               <div className="flex justify-between items-center flex-col-reverse min-[600px]:flex-row border-b border-b-black pb-5">
                 <div>
