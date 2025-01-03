@@ -59,7 +59,7 @@ export default function BlogReader() {
                             })
                              : block.children.map((text : any, j: number) => {
                                 return (
-                                    <span key={index + j} className={`${text.marks.includes("strong") ? `font-bold` : ``}`}>{text.text}</span>                                    
+                                    <span key={index + j / Math.random()} className={`${text.marks.includes("strong") ? `font-bold` : ``}`}>{text.text}</span>                                    
                                 )
                             })
                             }
@@ -67,7 +67,7 @@ export default function BlogReader() {
                     )
                 } else if (block._type === "image") {
                   return (
-                    <div key={index} className="flex justify-center">
+                    <div key={index / Math.random()} className="flex justify-center">
                       <Image
                         src={urlFor(block.markDefs.asset)
                           .width(400)
@@ -79,9 +79,7 @@ export default function BlogReader() {
                       ></Image>
                     </div>
                   );
-                } else {
-                  return <div>loading...</div>;
-                }
+                } 
               })}
           </div>
         </div>
