@@ -20,11 +20,11 @@ export default function Blogs() {
 
     blog.map(async (item: any) => {
       await arr.push({
-        title: item.title,
-        des: item.body[0].children[0].text,
-        image: urlFor(item.mainImage).width(400).height(300).url(),
-        date: new Date(item._createdAt).toDateString(),
-        slug: item.slug.current
+        title: item.title ? item.title : "Title",
+        des: item.body[0].children[0].text ? item.body[0].children[0].text : "Description",
+        image: urlFor(item.mainImage).width(400).height(300).url() ? urlFor(item.mainImage).width(400).height(300).url() : "https://via.placeholder.com/400x300",
+        date: new Date(item._createdAt).toDateString() ? new Date(item._createdAt).toDateString() : "Date",
+        slug: item.slug.current ? item.slug.current : "slug",
       });
     });
     setBlogsArr(arr);
