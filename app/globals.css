@@ -28,6 +28,7 @@
   height: 20px;
 } */
 
+
 @keyframes home-about {
   25% {
     left: var(--home);

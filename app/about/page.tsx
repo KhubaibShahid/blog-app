@@ -1,3 +1,4 @@
+"use client"
 import FooterApp from "../components/footer";
 
 export default function App() {

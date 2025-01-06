@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import FooterApp from "./components/footer";
+import IMAGE from "./assests/pexels-quintingellar-2199293.jpg"
 import { useState, useEffect } from "react";
 import { client } from "../sanity/lib/client";
 import { urlFor } from "../sanity/lib/image";
@@ -20,11 +21,11 @@ export default function App() {
 
     blog.map(async(item: any) => {
       await arr.push({
-        title: item.title,
-        des: item.body[0].children[0].text,
-        image: urlFor(item.mainImage).width(400).height(300).url() ,
-        date: item._createdAt,
-        slug: item.slug.current
+        title: item.title ? item.title : "Title",
+        des: item.body[0].children[0].text ? item.body[0].children[0].text : "Description if server was not connected.",
+        image: urlFor(item.mainImage).width(400).height(300).url() ? urlFor(item.mainImage).width(400).height(300).url() : IMAGE,
+        date: item._createdAt ? new Date(item._createdAt).toDateString() : new Date().toDateString(),
+        slug: item.slug.current ? item.slug.current : "example"
       });
     });
     setBlogsArr(arr);

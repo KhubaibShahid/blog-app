@@ -5,26 +5,29 @@ import Link from "next/link";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import useMediaQuery from "../hooks/helper";
 import { BiMenu, BiX } from "react-icons/bi";
+import { usePathname } from "next/navigation";
 
 export default function Nav() {
+
+  const pathname = usePathname();
+
   const isMobile = useMediaQuery("(max-width: 800px)");
   const anchorRef = useRef<any>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [anchor, setAnchor] = useState<
     "home" | "about" | "blogs" | "feedback" | null
-  >(
-    window.location.pathname === "/"
-      ? "home"
-      : window.location.pathname === "/about"
-        ? "about"
-        : window.location.pathname === "/blogs"
-          ? "blogs"
-          : window.location.pathname === "/feedback"
-            ? "feedback"
-            : window.location.pathname.includes("/readblog") ? "blogs"
-            : null
-  );
+  >(pathname === "/"
+          ? "home"
+          : pathname === "/about"
+            ? "about"
+            : pathname === "/blogs"
+              ? "blogs"
+              : pathname === "/feedback"
+                ? "feedback"
+                : pathname.includes("/readblog") 
+                ? "blogs"
+                : null);
 
   function setLinePosition() {
     if (anchor === "home") {
@@ -87,9 +90,13 @@ export default function Nav() {
   };
 
   useEffect(() => {
-    console.log(anchor);
+  console.log(pathname);
     setLinePosition();
   }, []);
+
+  
+  
+  
   return (
     <div className="nav w-full h-[80px] bg-gray-800">
       <div className="main flex justify-between items-center h-full px-10">
