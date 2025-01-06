@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import FooterApp from "./components/footer";
-import IMAGE from "./assests/pexels-quintingellar-2199293.jpg"
 import { useState, useEffect } from "react";
 import { client } from "../sanity/lib/client";
 import { urlFor } from "../sanity/lib/image";
