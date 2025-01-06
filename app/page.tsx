@@ -22,10 +22,10 @@ export default function App() {
     blog.map(async(item: any) => {
       await arr.push({
         title: item.title ? item.title : "Title",
-        des: item.body[0].children[0].text ? item.body[0].children[0].text : "Description if server was not connected.",
-        image: urlFor(item.mainImage).width(400).height(300).url() ? urlFor(item.mainImage).width(400).height(300).url() : IMAGE,
-        date: item._createdAt ? new Date(item._createdAt).toDateString() : new Date().toDateString(),
-        slug: item.slug.current ? item.slug.current : "example"
+        des: item.body[0].children[0].text ? item.body[0].children[0].text : "Description",
+        image: urlFor(item.mainImage).width(400).height(300).url() ? urlFor(item.mainImage).width(400).height(300).url() : "https://via.placeholder.com/400x300",
+        date: new Date(item._createdAt).toDateString() ? new Date(item._createdAt).toDateString() : "Date",
+        slug: item.slug.current ? item.slug.current : "slug",
       });
     });
     setBlogsArr(arr);
