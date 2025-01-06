@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { client } from "../sanity/lib/client";
 import { urlFor } from "../sanity/lib/image";
 import { useRouter } from "next/navigation";
+import { projectId } from "../sanity/env";
 
 export default function App() {
 
@@ -36,6 +37,7 @@ export default function App() {
 
   useEffect(() => {
     console.log(blogsarr);
+    console.log(projectId, "projectId");
   }
   , [blogsarr]);
   return (
